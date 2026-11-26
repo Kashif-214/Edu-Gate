@@ -1,91 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#2457d6">
-  <meta name="description" content="EDU SMART - Learn, practice and grow.">
-  <title>EDU SMART | Learn Smarter</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDU SMART</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fc;color:#172554}
+header{background:#123b75;color:white;padding:24px 18px;border-radius:0 0 24px 24px}
+header h1{margin:0;font-size:28px}
+header p{margin:8px 0 0;color:#dbeafe}
+main{padding:18px}
+.search{width:100%;padding:14px;border:1px solid #ddd;border-radius:12px;font-size:16px;margin:10px 0 22px}
+h2{font-size:20px;margin-top:22px}
+.welcome{background:#dceafe;padding:20px;border-radius:16px}
+.welcome h2{margin-top:0;color:#123b75}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:white;padding:17px;border-radius:15px;box-shadow:0 3px 12px #0000000c}
+.card span{font-size:28px}
+.card h3{font-size:16px;margin:10px 0 5px}
+.card p{font-size:13px;color:#64748b;margin:0}
+button{background:#1763b5;color:white;border:0;padding:12px 16px;border-radius:10px;font-size:14px;margin-top:12px}
+footer{text-align:center;padding:25px;color:#64748b;font-size:13px}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#" aria-label="EDU SMART home"><span class="brand-mark">E</span><span>EDU <b>SMART</b></span></a>
-    <button id="installBtn" class="install-btn" hidden>Install app</button>
-  </header>
 
-  <main class="shell">
-    <section class="welcome">
-      <div>
-        <p class="eyebrow">YOUR LEARNING SPACE</p>
-        <h1>Learn something<br><span> amazing today.</span></h1>
-        <p class="sub">Courses, study notes and practice tests — all in one place.</p>
-      </div>
-      <div class="welcome-art" aria-hidden="true"><span>✦</span><strong>Learn<br>Grow<br>Achieve</strong><i>✎</i></div>
-    </section>
+<header>
+<h1>🎓 EDU SMART</h1>
+<p>Learn. Grow. Succeed.</p>
+<p>പഠിക്കാം... വളരാം... വിജയിക്കാം!</p>
+</header>
 
-    <section class="stats" aria-label="Learning summary">
-      <article><span class="stat-icon blue">▣</span><div><strong id="courseCount">4</strong><small>Courses</small></div></article>
-      <article><span class="stat-icon green">✓</span><div><strong id="doneCount">0</strong><small>Quizzes passed</small></div></article>
-      <article><span class="stat-icon orange">★</span><div><strong>Anytime</strong><small>Learn at your pace</small></div></article>
-    </section>
+<main>
+<div class="welcome">
+<h2>Welcome to EDU SMART 👋</h2>
+<p>Your learning journey starts here!</p>
+<p>നിങ്ങളുടെ പഠനയാത്ര ഇവിടെ തുടങ്ങുന്നു.</p>
+</div>
 
-    <nav class="tabs" aria-label="Main navigation">
-      <button class="tab active" data-tab="home">⌂ <span>Home</span></button>
-      <button class="tab" data-tab="courses">▤ <span>Courses</span></button>
-      <button class="tab" data-tab="notes">▧ <span>Notes</span></button>
-      <button class="tab" data-tab="quiz">☑ <span>Quiz</span></button>
-      <button class="tab" data-tab="profile">◉ <span>Profile</span></button>
-    </nav>
+<input class="search" id="search" placeholder="Search courses... / കോഴ്സുകൾ തിരയുക">
 
-    <section id="home" class="panel active">
-      <div class="section-heading"><div><p class="eyebrow">KEEP MOVING FORWARD</p><h2>Explore learning</h2></div><span class="pill">For everyone</span></div>
-      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search courses and notes..." aria-label="Search courses and notes"></label>
-      <div id="homeCourses" class="course-grid"></div>
-      <div class="tip"><span>💡</span><div><b>Small steps make big progress.</b><p>Choose a topic, study a little, and test what you know.</p></div></div>
-    </section>
+<h2>📚 Explore Learning</h2>
+<div class="grid" id="courses">
+<div class="card">
+<span>🏫</span>
+<h3>School</h3>
+<p>Class 1 – 10</p>
+<button onclick="show('School')">Explore</button>
+</div>
+<div class="card">
+<span>📘</span>
+<h3>Higher Secondary</h3>
+<p>Plus One & Plus Two</p>
+<button onclick="show('Higher Secondary')">Explore</button>
+</div>
+<div class="card">
+<span>🎓</span>
+<h3>College</h3>
+<p>Degree & PG</p>
+<button onclick="show('College')">Explore</button>
+</div>
+<div class="card">
+<span>💻</span>
+<h3>Skill Learning</h3>
+<p>Learn new skills</p>
+<button onclick="show('Skill Learning')">Explore</button>
+</div>
+</div>
 
-    <section id="courses" class="panel">
-      <div class="section-heading"><div><p class="eyebrow">BUILD YOUR SKILLS</p><h2>All courses</h2></div></div>
-      <div id="allCourses" class="course-grid"></div>
-    </section>
+<h2>✨ More Features</h2>
+<div class="grid">
+<div class="card"><span>📖</span><h3>Study Materials</h3><p>Notes and learning resources</p></div>
+<div class="card"><span>📝</span><h3>Online Exams</h3><p>Practice quizzes and tests</p></div>
+<div class="card"><span>🎥</span><h3>Video Classes</h3><p>Learn through videos</p></div>
+<div class="card"><span>👤</span><h3>Student Profile</h3><p>Your learning progress</p></div>
+</div>
+</main>
 
-    <section id="notes" class="panel">
-      <div class="section-heading"><div><p class="eyebrow">QUICK REVISION</p><h2>Study notes</h2></div></div>
-      <div class="note-list">
-        <article class="note-card"><span class="note-icon">📘</span><div><b>Study Skills: Getting started</b><p>Set a clear goal, divide topics into smaller tasks, revise regularly and practise with questions.</p><small>STUDY TIPS · 2 MIN READ</small></div></article>
-        <article class="note-card"><span class="note-icon">🧠</span><div><b>How to remember more</b><p>Use active recall: close your book and explain the topic in your own words. Review it again after a day.</p><small>LEARNING · 2 MIN READ</small></div></article>
-        <article class="note-card"><span class="note-icon">🗓️</span><div><b>Simple study plan</b><p>Choose three priorities for the day. Study in focused sessions and take short breaks between them.</p><small>PLANNING · 1 MIN READ</small></div></article>
-      </div>
-      <p class="muted">These are starter notes. You can replace them with your own subject materials later.</p>
-    </section>
+<footer>
+<p>EDU SMART © 2026</p>
+<p>Education for Everyone ❤️</p>
+</footer>
 
-    <section id="quiz" class="panel">
-      <div class="section-heading"><div><p class="eyebrow">CHECK YOUR KNOWLEDGE</p><h2>Quick quiz</h2></div><span class="pill">3 questions</span></div>
-      <div id="quizBox" class="quiz-box">
-        <p class="question-count" id="questionCount">QUESTION 1 OF 3</p>
-        <h3 id="questionText"></h3>
-        <div id="answers" class="answers"></div>
-        <p id="quizFeedback" class="feedback" aria-live="polite"></p>
-        <button id="nextQuestion" class="primary-btn" disabled>Next question →</button>
-      </div>
-    </section>
-
-    <section id="profile" class="panel">
-      <div class="section-heading"><div><p class="eyebrow">YOUR SPACE</p><h2>Student profile</h2></div></div>
-      <div class="profile-card">
-        <div class="avatar">S</div>
-        <div><b>Welcome, Student!</b><p class="muted">Your learning journey starts here.</p></div>
-      </div>
-      <div class="profile-row"><span>Quizzes passed</span><b id="profileDone">0</b></div>
-      <div class="profile-row"><span>App version</span><b>1.0 starter</b></div>
-      <p class="muted">This first version does not collect personal information or use student accounts. Progress is saved on this device only.</p>
-    </section>
-
-    <footer>© <span id="year"></span> EDU SMART · Learn smarter, every day.</footer>
-  </main>
-  <script src="app.js"></script>
+<script>
+function show(course){
+alert(course + " section coming soon!");
+}
+document.getElementById("search").addEventListener("input",function(){
+let value=this.value.toLowerCase();
+document.querySelectorAll("#courses .card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+});
+});
+</script>
 </body>
 </html>
